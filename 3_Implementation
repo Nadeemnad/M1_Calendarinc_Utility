@@ -1,1 +1,89 @@
+else
+            SetColor(7); //Changing color to white for all days
+
+        gotoxy(pos,j);printf("%d",i+1);
+        if(pos==91)
+        {
+            pos=21; //Moving position to monday
+            j++;  //Increasing j by 10 if position is sunday
+        }
+    }
+
+    SetColor(5); //Changing color to purple
+
+    //Drawing horizontal line
+    for(i=22;i<102;i++)
+    {
+        gotoxy(i,4);printf("%c",196);
+        gotoxy(i,17);printf("%c",196);
+    }
+
+    //Drawing all the corner of the rectangle
+    gotoxy(21,4);printf("%c",218);
+    gotoxy(102,4);printf("%c",191);
+    gotoxy(21,17);printf("%c",192);
+    gotoxy(102,17);printf("%c",217);
+
+    //Drawing vertical line
+    for(i=5;i<17;i++)
+    {
+        gotoxy(21,i);printf("%c",179);
+        gotoxy(102,i);printf("%c",179);
+    }
+
+    SetColor(11); //Changing color to aqua
+
+    //Drawing left and the right navigation symbol
+    gotoxy(24,11);printf("%c",174);
+    gotoxy(98,11);printf("%c",175);
+
+}
+
+//==============  ARROW KEY ===============
+int getkey()
+{
+    int ch;
+    ch=getch();
+     if(ch==0)
+    {
+        printf("zero");
+        ch=getch();
+
+        return ch;
+    }
+    return ch;
+}
+
+//============ Calculating ====================
+void calendar(int nyr,int nmonth)
+{
+    int days[12]={31,28,31,30,31,30,31,31,30,31,30,31};
+    int tdays=0,k,myear;
+    system("cls");
+    myear=nyr-1; //Decreasing year by 1
+            if(myear>=1945)
+            {
+                for(k=1945;k<=myear;k++)
+                {
+                    if(k%4==0) //If the year is a leap year than total no of days is 366
+                        tdays=tdays+366;  //counting all the days till nyr - 1
+                    else //If the year is a leap year than total no of days is 365
+                        tdays=tdays+365;  //counting all the days till nyr - 1
+                }
+            }
+
+            if(nyr%4==0)
+                days[1]=29; //changing value in days array from 28 to 29 since leap year
+            else
+                days[1]=28; //changing value in days array from 29 to 28 since not a leap year
+
+            for(k=0;k<(nmonth-1);k++)
+            {
+
+                tdays=tdays+days[k]; //Adding nmonth-1 days to tdays
+            }
+
+            tdays=tdays%7; //Finding the remainder of tdays so it can calculate the position to display
+            display(nyr,nmonth,tdays,days); //Passing the value to display
+}
 
