@@ -273,7 +273,7 @@ void UnityPrintNumberUnsigned(const UNITY_UINT number)
 /*-----------------------------------------------*/
 void UnityPrintNumberHex(const UNITY_UINT number, const char nibbles_to_print)
 {
-    int nibble;
+    //int nibble;
     char nibbles = nibbles_to_print;
 
     if ((unsigned)nibbles > UNITY_MAX_NIBBLES)
@@ -1348,7 +1348,7 @@ void UnityAssertEqualString(const char* expected,
                             const char* msg,
                             const UNITY_LINE_TYPE lineNumber)
 {
-    UNITY_UINT32 i;
+   // UNITY_UINT32 i;
 
     RETURN_IF_FAIL_OR_IGNORE;
 
@@ -1388,7 +1388,7 @@ void UnityAssertEqualStringLen(const char* expected,
                                const char* msg,
                                const UNITY_LINE_TYPE lineNumber)
 {
-    UNITY_UINT32 i;
+   // UNITY_UINT32 i;
 
     RETURN_IF_FAIL_OR_IGNORE;
 
@@ -1429,7 +1429,7 @@ void UnityAssertEqualStringArray(UNITY_INTERNAL_PTR expected,
                                  const UNITY_LINE_TYPE lineNumber,
                                  const UNITY_FLAGS_T flags)
 {
-    UNITY_UINT32 i = 0;
+   // UNITY_UINT32 i = 0;
     UNITY_UINT32 j = 0;
     const char* expd = NULL;
     const char* act = NULL;
