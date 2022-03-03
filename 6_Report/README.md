@@ -10,7 +10,9 @@ Our project has a big scope to do.
  We can:
 
   It displays a nicely formatted calendar of every month.
+ 
   You can find the day by entering the day,month,year.
+ 
   You can also search for particular month,day etc.
    
  We can't:
