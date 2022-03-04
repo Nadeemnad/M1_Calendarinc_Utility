@@ -1,9 +1,7 @@
 /**
  * @file calendar_operations.h
  * @Mohammed Nadeem.M
- * @brief Header file for Calculator application with Arithmetic operations
- *
- */
+ 
 
 #ifndef __CALENDAR_OPERATIONS_H__
 #define __CALENDAR_OPERATIONS_H__
